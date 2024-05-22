@@ -1,0 +1,125 @@
+{%extends 'base.html'%}
+
+{% block head%}
+
+{%endblock%}
+
+{% block body%}
+
+<div class="slide-one-item home-slidee owl-carousel">
+  <div class="site-blocks-cover overlay" style="background-image: url({{url_for('static', filename='images/hero_bg_1.jpg')}});" >
+     <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+           <div class="col-md-10">
+              <span class="d-inline-block bg-success text-white px-3 mb-3 property-offer-type rounded">Select Features to get</span>
+              <h1 class="mb-2" >Predicted Price</h1>
+              <strong id="predicted-price-value" class="h2 text-success font-weight-bold"></strong>
+              {% if value %}
+              <p class="mb-5"><strong class="h2 text-success font-weight-bold">{{value}}</strong></p>
+              {% endif%}
+              <p><a href="#" class="btn btn-white btn-outline-white py-3 px-5 rounded-0 btn-2">See Details</a></p>
+           </div>
+        </div>
+     </div>
+  </div>
+
+</div>
+<div class="site-section site-section-sm pb-0">
+  <div class="container">
+     <div class="row">
+        <form id="predict-form" class="form-search col-md-12" style="margin-top: -100px;">
+           <div class="row  align-items-end">
+              <div class="col-md-2">
+                 <label for="list-types" id="ff">Property Types</label>
+                 <div class="select-wrap">
+                    <span class="icon icon-arrow_drop_down"></span>
+                    <select name="property-type" id="list-types" class="form-control d-block rounded-0">
+                      <option value="Property type_D">Detached</option>
+                      <option value="Property type_S">Semi-Detached</option>
+                      <option value="Property type_T">Terraced</option>
+                      <option value="Property type_F">Flats/Maisonettes</option>
+                       <option value="Property type_O">Other</option>
+                    </select>
+                 </div>
+              </div>
+              <div class="col-md-2">
+                 <label for="offer-types">State of property</label>
+                 <div class="select-wrap">
+                    <span class="icon icon-arrow_drop_down"></span>
+                    <select name="state-of-property" id="offer-types" class="form-control d-block rounded-0">
+                       <option value="Old/New_Y">New</option>
+                       <option value="Old/New_N">Old</option>
+                    </select>
+                 </div>
+              </div>
+              <div class="col-md-2">
+                 <label for="select-city">Year</label>
+                 <div class="select-wrap">
+                    <span class="icon icon-arrow_drop_down"></span>
+                    <select name="year" id="year" class="form-control d-block rounded-0">
+                     <option value="1995">1995</option>
+                     <option value="1996">1996</option>
+                     <option value="1997">1997</option>
+                     <option value="1998">1998</option>
+                     <option value="1999">1999</option>
+                     <option value="2000">2000</option>
+                     <option value="2001">2001</option>
+                     <option value="2002">2002</option>
+                     <option value="2003">2003</option>
+                     <option value="2004">2004</option>
+                     <option value="2005">2005</option>
+                     <option value="2006">2006</option>
+                     <option value="2007">2007</option>
+                     <option value="2008">2008</option>
+                     <option value="2009">2009</option>
+                     <option value="2010">2010</option>
+                     <option value="2011">2011</option>
+                     <option value="2012">2012</option>
+                     <option value="2013">2013</option>
+                     <option value="2014">2014</option>
+                     <option value="2015">2015</option>
+                     <option value="2016">2016</option>
+                     <option value="2017">2017</option>
+                     <option value="2018">2018</option>
+                     <option value="2019">2019</option>
+                     <option value="2020">2020</option>
+                     <option value="2021">2021</option>
+                     <option value="2022">2022</option>
+                     <option value="2023">2023</option>
+                     <option value="2024">2024</option>
+                     <option value="2025">2025</option>
+                    </select>
+                 </div>
+              </div>
+              <div class="col-md-2">
+               <label for="select-city">Month</label>
+               <div class="select-wrap">
+                  <span class="icon icon-arrow_drop_down"></span>
+                  <select name="month" id="month" class="form-control d-block rounded-0">
+                   <option value="1">January</option>
+                   <option value="2">February</option>
+                   <option value="3">March</option>
+                   <option value="4">April</option>
+                   <option value="5">May</option>
+                   <option value="6">June</option>
+                   <option value="7">July</option>
+                   <option value="8">August</option>
+                   <option value="9">September</option>
+                   <option value="10">October</option>
+                   <option value="11">November</option>
+                   <option value="12">December</option> 
+                  </select>
+               </div>
+            </div>
+              <div class="col-md-3">
+                 <button type="button" id="predictButton" onclick="getPriceValue()" class="btn btn-success text-white btn-block rounded-0">Predict</button>
+              </div>
+           </div>
+        </form>
+     </div>
+     
+  </div>
+</div> 
+</div>
+
+{%endblock%}
